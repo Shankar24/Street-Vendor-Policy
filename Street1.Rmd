@@ -1,0 +1,93 @@
+---
+title: |
+  | Review: Evaluation of Street Vendor Policy in India
+author: |
+  | Shankar Mepparambath, Trilok, Reheth
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  pdf_document:
+    keep_tex: yes
+    latex_engine: pdflatex
+    fig_caption: yes
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+    citation_package: natbib
+  word_document:
+    toc: yes
+    toc_depth: '2'
+subtitle: |
+  | Submitted to : Prof. Amir Ullha Khan
+geometry: left=2.5cm,right=2.5cm,top=2cm,bottom=2cm
+fontfamily: mathpazo
+header-includes:
+- \usepackage{lineno}
+- \linenumbers
+- \usepackage{graphicx}
+- \usepackage{float}
+- \usepackage{amsmath}
+- \usepackage{setspace}\onehalfspacing
+indent: yes
+link-citations: yes
+linkcolor: blue
+csl: apa-5th-edition.csl
+bibliography: str.bib
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE)
+library(foreign)
+library(rmarkdown)
+library(psych)
+library("sandwich")
+library(ggplot2)
+library(knitr)
+library(tidyverse)
+library(citation)
+library(readxl)
+library(knitr)
+library(stargazer)
+library(equatiomatic)
+library(randomcoloR)
+suppressMessages(library(dplyr, warn.conflict = FALSE, quietly = TRUE))
+setwd("/Users/apple/Desktop/KSPP/Sem IV/INF/Street Vendor/")
+```
+
+\newpage
+
+# Introduction
+
+Informal economy contributed close to 90% to Indian economy.  Among the Informal economy, street vending occupied big pie in terms of transactions and value @patel_framework_2021. Among the commoners, there is lot of positive and negative perception about street vendors. The word “street” in the prefix of street vendors itself is so demeaning that it creates a prediction of their lives and gives an identity that these people belong or live in the streets @kumari2015issues. @bromley2000street highlighted both for and against argument on street vending business. In the early of 1990, street vending business is pertain only to global South, however recent studies showed even developed economies showed interest in street vending business because of potential volume and value it contributed to the economy growth, however there is difference between how policy is initiated and implemented between global north and south @recchi_informal_2021.  @saha2009decent study highlighted the Mumbai's street vendor unhelpful situation in terms of financial, job security and their work environment.
+
+# Review of literature
+
+## Street Vendor - Across the World 
+
+Post the 2008 global economic crisis, international and national governments have come to recognize informal livelihoods as a form of employment while OECD quoting that ‘informal is normal’. Modern street vending has now become essential in sustaining the urban economy, giving life to urban spaces, attracting customers and encouraging people to engage in social interaction. They are said to contribute to public safety and enhance quality of life in cities like New York and Mumbai.  Analysis of street vending activities across countries, previous studies examined the state of street vendors in India, South Africa, Peru, Indonesia and the US. The findings of the paper suggested that there exists general insecurity among vendors and fear of harassment from the part of authorities in Ahmedabad, India; Durban, South Africa; Lima, Peru and Depok, Indonesia. More than half of the survey respondents in Ahmedabad, Durban, and Nakuru in Kenya reported being harassed by local officials and police, compared to less than half in Lima and Nakuru. In addition, confiscations of goods and evictions were frequent in these cities. @roever2016informal.
+
+
+## Problems and Challenges faced by the Street Vendors in India
+
+
+Street vendors face many challenges and are always vulnerable to living in uncertainty. Even after working for many hours, they earn very minimal incomes.  Many street vendors are still unrecognized and don’t have an ID card/certificate of vending by local authorities to officially to the business. They are often ignorant about their rights because of a lack of awareness. Many street vendors are also migrants from various rural regions as they couldn’t get proper employment back home. After coming to these urban areas, they adjust and live in deplorable living conditions where they are exposed to an unhygienic environment, so their health deteriorates. 
+
+Firstly, **lack access to capital**. Whatever the street vendors earn is sufficient to cook a meal for that day and live, and saving for the future is a far-off dream. it is mere **subsistence life**, a vicious cycle never ends.  The banks also don’t support street vendors  by lending minimal working capital because of procedures/collateral issues. Situation led to end up taking money from the local borrowers who charge very high-interest rates that keep these people caught up, where they keep paying for the rest of their lives to clear dues @dhamodharanproblems.
+
+Secondly, Eviction and Confiscation is another major challenge that deprives the street vendors of their working capital and leads to losses that hit hard on their savings, further making their lives worse. The street vendors tend to fixate on a place where they find a good market and the business is fasting moving. But, the local authorities force them to displace and relocate to the allocated area, which causes serious trouble to their businesses and incomes. While planning, the local authorities tend only to prioritize the city's physical infrastructure but ignore these people, who are the crucial in the state's economy @jaishankar2016study.
+
+Thirdly,  threat from **e-commerce business** on street vendors business. India has a huge marketplace where retail/street vending and e-commerce co-exist.  But, the changing trends where people are getting more comfortable shopping by sitting at home just by swiping through pictures is increasing the number of online buyers each day. Statistics show that in 2019 India had 135 million online shoppers, and the number went up to 150 million in 2020. This changing shopping pattern is expected to hit informal street vendors soon @statista_india_2021.
+
+## Situation in COVID-19
+
+GOI adopted most stringent measures during COVID, the whole country going into lock down. In the stringency index by the University of Oxford, India got a 100 on a scale of 0-100. Non cognizant Lock down took a significant toll on the lives of street vendors whose livelihoods depended solely on public mobility. If we look at the data of Greater Chennai Corporation, almost 7,965 street vendors who sold vegetables & fruits stopped their businesses during a pandemic. As many as 2,509 vendors told the officials they were "out of the station," 2,947 were not reachable on the phone, and around 68 street vendors died. The case was more or less similar in all the other states. This information tells us how devastating the situation was and the crisis in which their lives were trapped during the nationwide lockdown @maniktala2020state.
+
+## Street Vendor Policy in India - Evolution
+
+The Indian Constitution, Article 19 (1)(g) assured the an individual rights to practice any kind of profession or trade or occupation and Article 39A assured every human has the right to have adequate means of livelihood. Though mentioned article encourages any people practicing their occupation, however Article 34 IPC, provided the police force to evict the road business due to disturbance.  Article 19 and 34 contradict and it put street vendor business in worst case.  To protect the rights street vendor business and to regulate the street vending business, the government of India, drafted the National Policy on Urban Street Vendors in 2004.  In 2009 and 2014 major revision is made and in 2014, street vendor act is implemented.  With the support of NGO like SEWA, Civil Society, Judicial fraternities and other stakeholders of government functionaries, street vendor act come into existence @nitya.
+
+  One of the remarkable change in 2014 street vendor act is on Section 3, formation of Town Vending Committee (TVC), which takes care of surveying the existing vendor to understand the background profile and their business establishments.  It emphasized no eviction till the time reallocation of new zones and issuing of certificate of vending, CoV issued to all the street vendors.   2.5 percent is applicable to existing vendors for local population, further it can issue CoV to the new vendors @narang_survey_nodate.
+
+
+
+
+
